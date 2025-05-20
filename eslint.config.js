@@ -1,42 +1,62 @@
 import js from '@eslint/js';
-import globals from 'globals';
-import pluginReact from 'eslint-plugin-react';
-import pluginPrettier from 'eslint-plugin-prettier';
-import babelParser from '@babel/eslint-parser';
-import { defineConfig } from 'eslint/config';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import importPlugin from 'eslint-plugin-import';
+import unicorn from 'eslint-plugin-unicorn';
+import prettier from 'eslint-config-prettier';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
 
-export default defineConfig([
+export default [
+  js.configs.recommended,
+  prettier,
   {
     files: ['**/*.{js,jsx}'],
     languageOptions: {
-      parser: babelParser,
-      parserOptions: {
-        requireConfigFile: false,
-        babelOptions: {
-          presets: ['@babel/preset-react'],
-        },
-      },
-      ecmaVersion: 'latest',
-      sourceType: 'module',
       globals: {
-        ...globals.browser,
-        ...globals.node,
+        document: true,
+        window: true,
+      },
+      parserOptions: {
+        sourceType: 'module',
+        ecmaVersion: 'latest',
+        ecmaFeatures: {
+          jsx: true,
+        },
       },
     },
     plugins: {
-      react: pluginReact,
-      prettier: pluginPrettier,
-    },
-    rules: {
-      ...js.configs.recommended.rules,
-      ...pluginReact.configs.recommended.rules,
-      'react/react-in-jsx-scope': 'off',
-      'prettier/prettier': 'error',
+      react,
+      'react-hooks': reactHooks,
+      import: importPlugin,
+      unicorn,
+      'simple-import-sort': simpleImportSort,
     },
     settings: {
       react: {
         version: 'detect',
       },
+      'import/resolver': {
+        node: {
+          extensions: ['.js', '.jsx'],
+        },
+      },
+    },
+    rules: {
+      'unicorn/filename-case': [
+        'error',
+        {
+          cases: {
+            camelCase: true,
+            pascalCase: true,
+          },
+        },
+      ],
+      'simple-import-sort/exports': 'error',
+      'simple-import-sort/imports': 'error',
+      'import/namespace': [2, { allowComputed: true }],
+      'import/first': 'error',
+      'import/newline-after-import': 'error',
+      'no-unused-vars': ['warn', { argsIgnorePattern: '^(on|config)$' }],
     },
   },
-]);
+];
