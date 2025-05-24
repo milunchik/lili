@@ -50,6 +50,10 @@
   font-size: 12px;
 }
 
+.contact__option h5 {
+  font-size: 12px;
+}
+
 form {
   display: flex;
   flex-direction: column;

@@ -51,12 +51,12 @@ export default [
           },
         },
       ],
+      'no-unused-vars': 'off',
       'simple-import-sort/exports': 'error',
       'simple-import-sort/imports': 'error',
       'import/namespace': [2, { allowComputed: true }],
       'import/first': 'error',
       'import/newline-after-import': 'error',
-      'no-unused-vars': ['warn', { argsIgnorePattern: '^(on|config)$' }],
     },
   },
 ];

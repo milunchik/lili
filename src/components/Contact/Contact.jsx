@@ -28,7 +28,7 @@ export const Contact = () => {
             <article className={styles.contact__option}>
               <MdOutlineEmail className={styles.contact__icon} />
               <h3>Email</h3>
-              <h5>___</h5>
+              <h5>popovich2003liliya@gmail.com</h5>
               <a
                 href="mailto:popovich2003liliya@gmail.com"
                 target="__blank"
@@ -41,7 +41,7 @@ export const Contact = () => {
             <article className={styles.contact__option}>
               <RiMessengerLine className={styles.contact__icon} />
               <h3>Messenger</h3>
-              <h5>___</h5>
+              <h5>Liliia Popovych</h5>
               <a
                 href="http://m.me/profile?id=profile-id"
                 target="__blank"
