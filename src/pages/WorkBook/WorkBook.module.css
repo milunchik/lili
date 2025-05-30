@@ -1,0 +1,94 @@
+.workBookPageWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 60px 40px;
+  max-width: 1200px;
+  height: 100%;
+  min-height: 100vh;
+  background-color: var(--color-ui-1);
+  border-radius: 30px;
+  flex-wrap: wrap;
+}
+
+.imgContainer {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgContainer img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.infoContainer {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: center;
+  gap: 30px;
+  color: var(--color-text);
+}
+
+.infoContainer h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 1.1;
+  color: #b083f9;
+}
+
+.infoContainer p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.infoContainer button {
+  width: 100%;
+  padding: 20px 40px;
+  background: var(--btn-color);
+  border-radius: 36px;
+  border: none;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.infoContainer button:hover {
+  transform: scale(1.05);
+  opacity: 0.95;
+}
+
+@media (max-width: 768px) {
+  .workBookPageWrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+
+  .infoContainer h1 {
+    font-size: 42px;
+    text-align: center;
+  }
+
+  .infoContainer p {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .infoContainer button {
+    margin: 0 auto;
+  }
+}

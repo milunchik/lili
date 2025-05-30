@@ -1,7 +1,11 @@
 import { FaTelegram } from 'react-icons/fa6';
 import { FaInstagram } from 'react-icons/fa';
 
-export const menu = [{ name: 'About' }, { name: 'Contact' }];
+export const menu = [
+  { name: 'About' },
+  { name: 'Workbook' },
+  { name: 'Contact' },
+];
 
 export const socialHandles = [
   {

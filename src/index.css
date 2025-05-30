@@ -28,6 +28,10 @@
   --card-border-gb: 83, 134, 135;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
