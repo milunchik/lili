@@ -1,7 +1,7 @@
 import { Link } from 'react-scroll';
 
-import { menu, socialHandles } from '../../../data';
 import styles from './Footer.module.css';
+import { menu, socialHandles } from '../../../data';
 
 export const Footer = () => {
   return (

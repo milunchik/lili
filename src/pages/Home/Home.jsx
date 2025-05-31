@@ -1,7 +1,10 @@
-import { Header } from '../../components/Header/Header';
 import styles from './Home.module.css';
+import { Header } from '../../components/Header/Header';
 
 export const Home = () => {
+  const handleClick = () => {
+    document.getElementById('workbook').scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <section id="about">
       <div className={styles.homePageWrapper}>
@@ -23,7 +26,7 @@ export const Home = () => {
               у навчанні.
             </p>
 
-            <button>Дивитись WorkBook</button>
+            <button onClick={handleClick}>Дивитись WorkBook</button>
           </div>
         </div>
       </div>

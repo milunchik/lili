@@ -1,6 +1,11 @@
 .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
-  max-width: 840px;
+  /* max-width: 840px; */
   background: #111827;
   border: 2px solid #5b5b5b;
   border-radius: 17px;
@@ -11,6 +16,8 @@
   align-items: center;
   gap: 20px;
   align-self: stretch;
+  justify-content: center;
+  z-index: 1000;
 }
 
 .mainContent {
@@ -77,4 +84,11 @@
   width: 100%;
   max-width: 760px;
   box-sizing: border-box;
+}
+
+.closeButton {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: none;
 }

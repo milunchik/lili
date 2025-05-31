@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import styles from './WorkBook.module.css';
+import { Modal } from '../../components/Modal/Modal';
 
 export const WorkBook = () => {
+  const [isButtonClicked, setButtonClicked] = useState(false);
+
+  const handleClick = () => {
+    setButtonClicked(!isButtonClicked);
+  };
   return (
     <section id="workbook">
       <div className={styles.workBookPageWrapper}>
+        {isButtonClicked && <Modal onClose={() => setButtonClicked(false)} />}
         <div className={styles.imgContainer}>
           <img src="/images/workbook.svg" alt="WorkBook_Photo" />
         </div>
@@ -21,7 +28,7 @@ export const WorkBook = () => {
             – відкрийте двері у світ англійської разом із цим воркбуком!
           </p>
 
-          <button>Замовити</button>
+          <button onClick={handleClick}>Замовити</button>
         </div>
       </div>
     </section>
