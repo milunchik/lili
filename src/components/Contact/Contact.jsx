@@ -1,7 +1,6 @@
 import { useForm, ValidationError } from '@formspree/react';
-import { FaTelegramPlane } from 'react-icons/fa';
+import { FaTelegramPlane, FaInstagram } from 'react-icons/fa';
 import { MdOutlineEmail } from 'react-icons/md';
-import { RiMessengerLine } from 'react-icons/ri';
 
 import styles from './Contact.module.css';
 
@@ -39,11 +38,11 @@ export const Contact = () => {
               </a>
             </article>
             <article className={styles.contact__option}>
-              <RiMessengerLine className={styles.contact__icon} />
-              <h3>Messenger</h3>
+              <FaInstagram className={styles.contact__icon} />
+              <h3>Instagram</h3>
               <h5>Liliia Popovych</h5>
               <a
-                href="http://m.me/profile?id=profile-id"
+                href="https://www.instagram.com/lilienglish.blog?igsh=c2c0YzMxdHN3YWwy&utm_source=qr"
                 target="__blank"
                 rel="noopener noreferrer"
                 className="btn"

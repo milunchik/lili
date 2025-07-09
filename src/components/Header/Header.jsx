@@ -10,6 +10,9 @@ export const Header = () => {
         <a href="#workbook" className={styles.navItem}>
           ПРО ВОРКБУК
         </a>
+        <a href="#contact" className={styles.navItem}>
+          КОНТАКТИ
+        </a>
       </nav>
     </div>
   );

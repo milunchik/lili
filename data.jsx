@@ -1,12 +1,6 @@
 import { FaInstagram } from 'react-icons/fa';
 import { FaTelegram } from 'react-icons/fa6';
 
-export const menu = [
-  { name: 'About' },
-  { name: 'Workbook' },
-  { name: 'Contact' },
-];
-
 export const socialHandles = [
   {
     name: 'Telegram',
