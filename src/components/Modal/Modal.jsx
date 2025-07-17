@@ -5,11 +5,12 @@ import { IoIosCloseCircle } from 'react-icons/io';
 
 import styles from './Modal.module.css';
 
-export const Modal = ({ onClose }) => {
+export const Modal = ({ onClose, onSuccess }) => {
   const [state, handleSubmit] = useForm('xpwradzn');
+
   if (state.succeeded) {
-    return <p>Thanks for buying!</p>;
-    //should be replace by logic of payment
+    onSuccess();
+    return null;
   }
 
   return (
@@ -19,9 +20,13 @@ export const Modal = ({ onClose }) => {
       </button>
       <div className={styles.mainContent} onClick={(e) => e.stopPropagation()}>
         <form onSubmit={handleSubmit}>
-          <h1>
+          {/* <h1>
             Замовити <nav>WorkBook</nav>
-          </h1>
+          </h1> */}
+
+          <h2>
+            Воркбук можна отримати за внесок <nav> 199 </nav> грн.
+          </h2>
 
           <input
             type="email"
@@ -44,8 +49,9 @@ export const Modal = ({ onClose }) => {
             errors={state.errors}
           />
           <button type="submit" disabled={state.submitting}>
-            Надіслати
+            Замовити
           </button>
+          <h2> Надішліть свої дані, а ми надішлемо вам файл!</h2>
         </form>
       </div>
     </div>
@@ -54,4 +60,5 @@ export const Modal = ({ onClose }) => {
 
 Modal.propTypes = {
   onClose: PropTypes.func.isRequired,
+  onSuccess: PropTypes.func.isRequired,
 };
